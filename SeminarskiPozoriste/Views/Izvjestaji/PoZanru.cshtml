@@ -1,0 +1,45 @@
+﻿@model IzvjestajRezervacijeVM
+
+
+@{
+    ViewData["Title"] = "Izvještaji";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body style=" background-color: whitesmoke">
+
+
+    <br />
+    <br />
+    <h4 style="text-align: center; font-style:italic; letter-spacing: 1px;font-weight:bold;">Izvještaj o broju rezervacija i zaradi po žanru </h4>
+    <br />
+    <br />
+    <br />
+    <table class="table" style="width:85%; margin-left:5%">
+        <thead>
+            <tr>
+                <th>Žanr</th>
+                <th>Broj rezervacija</th>
+                <th>Zarada (KM)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.lista)
+            {
+                <tr>
+                    <td>@x.Zanr</td>
+                    <td>@x.BrojRezervacija</td>
+                    <td>@x.Zarada</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+
+    <br />
+    <br />
+    <a class="btn btn-warning" asp-action="PoZanru2" style=" margin-left:5%; width:10% " ><i class="fas fa-file-pdf"></i>  PDF</a>
+    </body>

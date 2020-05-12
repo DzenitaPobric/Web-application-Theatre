@@ -1,0 +1,34 @@
+﻿@model Sponzor
+@{
+    ViewData["Title"] = "Detalji";
+}
+<br />
+@*<h2>Detalji</h2>*@
+
+
+<input asp-for="SponzorID" type="hidden" />
+
+
+<div style="margin-left:5%">
+    <div class="form-group">
+        <label>Naziv</label>
+        <input asp-for="@Model.Naziv" class="form-control" style="width:350px" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Broj telefona</label>
+        <input asp-for="@Model.BrojTelefona" class="form-control"  style="width:350px" readonly />
+    </div>
+</div>
+
+
+<div id="ajaxDiv">
+
+</div>
+
+<script>
+    $.get("/AjaxUplate/Index/@Model.SponzorID",function(data){
+        $("#ajaxDiv").html(data);
+    })
+</script>
+

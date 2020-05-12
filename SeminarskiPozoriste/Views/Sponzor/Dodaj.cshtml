@@ -1,0 +1,37 @@
+﻿@model SponzorDodajVM
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/DodajForm.css">
+</head>
+
+<body style="background-color:whitesmoke">
+
+
+    <h2 class="naslov">Dodaj sponzora</h2>
+    <br />
+    <div class="okvir">
+
+        <form asp-action="Snimi" method="post">
+            <input type="hidden" asp-for="Sponzor.SponzorID" />
+
+            <div class="form-group">
+                <label class="label">Naziv </label>
+                <input asp-for="Sponzor.Naziv" id="input" class="form-control" required="" oninvalid="this.setCustomValidity('Naziv je obavezno polje')"
+                       oninput="setCustomValidity('')" />
+            </div>
+
+            <div class="form-group">
+                <label class="label">Broj telefona </label>
+                <input asp-for="Sponzor.BrojTelefona" id="input" class="form-control" required="" oninvalid="this.setCustomValidity('Broj telefona je obavezno polje')"
+                       oninput="setCustomValidity('')" />
+                <span asp-validation-for="Sponzor.BrojTelefona" class="text-danger"style="margin-left:10%"></span>
+            </div>
+
+            <br />
+            <input type="submit" value="Snimi" class="btn btn-danger" id="snimi" />
+        </form>
+    </div>
+    </body>

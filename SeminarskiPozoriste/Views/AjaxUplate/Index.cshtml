@@ -1,0 +1,31 @@
+﻿@model AjaxUplateIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br /><br />
+
+<h3 style=" margin-left:5%;">Prikaz uplata</h3>
+
+<br /><br />
+<table class="table" style="width:50%; margin-left:10%">
+    <thead>
+        <tr>
+            <th>Naziv uplate </th>
+            <th>Iznos </th>
+            <th>Svrha </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.lista)
+        {
+            <tr>
+                <td>@x.Naziv</td>
+                <td>@x.Iznos</td>
+                <td>@x.Svrha</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

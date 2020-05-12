@@ -1,0 +1,45 @@
+﻿@model PredstavaKupacDodajVM
+@{
+    ViewData["Title"] = "OcijeniPredstavu";
+    Layout = "~/Views/Shared/_LayoutKlijent.cshtml";
+
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/DodajForm.css">
+</head>
+<body style="background-color:whitesmoke">
+
+    <br />
+    <br />
+
+
+    <div class="okvir">
+        
+        <span style="font-size:large; font-style:oblique;font-weight:bold;margin-left:4%">
+            Predstava: @Model.predstava
+        </span>
+        <br /><br />
+              <form asp-action="SnimiOcjenu" method="post" enctype="multipart/form-data">
+                  <input type="hidden" asp-for="PredstavaKupac.PredstavaKupacID" />
+                  <input type="hidden" asp-for="PredstavaKupac.PredstavaID" />
+                  <input type="hidden" asp-for="PredstavaKupac.KupacID" />
+                  <input type="hidden" asp-for="predstava" />
+
+                  <div class="form-group">
+                      <label class="label">Ocjena</label>
+                      <input asp-for="PredstavaKupac.Ocjena" id="input" class="form-control" />
+                      <span asp-validation-for="PredstavaKupac.Ocjena" class="text-danger" style="width:25%;margin-left:10%"></span>
+                  </div>
+
+
+                  <input type="submit" value="Snimi" class="btn btn-danger" id="snimi" />
+                  <br /><br />
+                  <div>
+                      <a class="btn btn-outline-info" asp-action="Predstava"> <i class="fas fa-arrow-circle-left"></i> Nazad</a>
+                  </div>
+              </form>
+
+
+    </div>
+ </body>

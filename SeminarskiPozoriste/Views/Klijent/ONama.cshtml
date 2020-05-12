@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewData["Title"] = "ONama";
+    Layout = "~/Views/Shared/_LayoutKlijent.cshtml";
+}
+
+<head>
+    <link href="~/css/test.css" rel="stylesheet" />
+</head>
+
+
+
+
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:200%;margin-left:-50%;">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="display-4">DOBRODOŠLI!</h3>
+                        <p class="lead">Na naš oficijelni website.</p>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('http://www.startheatres.com.au/uploads/4/0/4/2/40425777/t2_orig.jpg')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="display-4">ŠTA MOŽETE PRONAĆI OVDJE?</h3>
+                        <p class="lead">Sve što vam treba.</p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('http://www.droylsdenlittletheatre.co.uk/wp-content/uploads/2013/01/banner_img1.jpg')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="display-4">Najnovije predstave uvijek kod nas!</h3>
+                        <p class="lead"></p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="py-5" style="margin-top:20px;">
+        <div class="container">
+            <h1 style="text-align: center; font-style:italic; letter-spacing:2px">Ko smo mi?</h1>
+
+            <p class="lead">Od svog osnivanja do danas, naše pozorište nametnulo se kao najeminentnija institucija kulture koja je donijela različitost umjetničkog djelovanja i izraza.</p>
+            <br />
+            <p class="lead">Tokom svog dugogodišnjeg postojanja ovo pozorište je ugostilo čitave plejade glumaca, režisera, scenografa, kostimografa i koreografa.</p>
+            <br />
+            <p class="lead">Često smo domaćini i raznim drugim kulturnim sadržajima, izložbama, promocijama, poetskim večerima, tribinama, tematskim priredbama.</p>
+
+        </div>
+    </section>
+
+
+
+
+@*<br />
+    <header class="bg-primary text-center py-4 mb-2">
+        <div class="container">
+            <h2 class="font-weight-light text-white">Upoznajte naš tim</h2>
+        </div>
+    </header>
+<br />*@
+
+<div>
+    <h1 style="text-align: center; font-style:italic;margin-bottom:4%;margin-top:3%; letter-spacing: 4px;">Sponzori</h1>
+</div>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/fbih.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @*<h5 class="card-title mb-0">Abaza Faris</h5>*@
+                        <div class="card-text text-black-50">Federalno ministarstvo kulture i sporta</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/hnk.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @*<h5 class="card-title mb-0">Dženita Pobrić</h5>*@
+                        <div class="card-text text-black-50">Vlada hercegovačko-neretvanskog kantona</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/mostar.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">@*Nizama Ćosić*@</h5>
+                        <br />
+
+                        <div class="card-text text-black-50">Grad Mostar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/tzhnk.jpg" style="width:65%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @* <h5 class="card-title mb-0">Admir Glamočak</h5>*@<br />
+                        <div class="card-text text-black-50">Turistička zajednica HNK</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/unmp.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">@*Sedina Gosto*@</h5><br />
+                        <div class="card-text text-black-50">Univerzitet "Džemal Bijedić"</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/fitsponzor.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @* <h5 class="card-title mb-0">Samir Obradović</h5>*@
+                        <div class="card-text text-black-50">Fakultet informacijskih tehnologija </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/centarZaKulturu.png" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @*<h5 class="card-title mb-0">Mehmed Ćatić</h5>*@<br />
+                        <div class="card-text text-black-50">Centar za kulturu </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/images/bljesak.jpg" style="width:50%;margin:auto;margin-top:5%" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        @*<h5 class="card-title mb-0">John Doe</h5>*@
+                        <br />
+                        <div class="card-text text-black-50">Bljesak.info</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+<!-- /.container -->
+

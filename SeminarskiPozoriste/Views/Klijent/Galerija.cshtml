@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Galerija";
+    Layout = "~/Views/Shared/_LayoutKlijent.cshtml";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+        @*<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script src="https://code.jquery.com/jquery-2.1.4.js"
+                integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
+                crossorigin="anonymous"></script>
+        <link href="~/css/loader.css" rel="stylesheet" />*@
+    <style>
+        .preview {
+            width: 680px;
+            height: 390px;
+            margin: 0 auto;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 33px 60px -3px rgba(0,123,255,0.75);
+            -moz-box-shadow: 0px 33px 60px -3px rgba(0,123,255,0.75);
+            box-shadow: 0px 33px 60px -3px rgba(0,123,255,0.75);
+            display: block;
+        }
+
+        .thumb {
+            display: inline-block;
+            width: 205px;
+            margin-right: auto;
+        }
+
+        .normal {
+            border: 3px solid #000000;
+            margin-bottom: 15px;
+        }
+
+        .selected {
+            border: 3px solid #007bff;
+        }
+    </style>
+</head>
+
+<body style="background-color:whitesmoke;">
+    <div class="content">
+        <h2 style="text-align:center;letter-spacing:10px;font-size:40px;font-family:sans-serif">GALERIJA</h2>
+
+        <br />
+        <div>
+            <img id="0" class="preview normal" src="" alt="preview" /><br /><br />
+        </div>
+
+        <img id="1" class="thumb normal" src="http://img.youtube.com/vi/TEh7OWMaUnE/hqdefault.jpg" alt="image1" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://cdn.thestage.co.uk/wp-content/uploads/2018/06/05125209/shutterstock_528284323-700x455.jpg" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://www.breakingnews.ie/remote/content.assets.pressassociation.io/2018/08/05130954/60761713-8dd8-443f-8cb6-e13920f738cc.jpg?crop=0,344,4999,3156&ext=.jpg&width=600&s=bn-860138" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://res.cloudinary.com/dg86xjjts/image/upload/w_1920,f_auto,q_auto/v1521042708/uqeoetdony4ceyeujh6f" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://res.cloudinary.com/dg86xjjts/image/upload/q_auto/v1521042701/gjz8tyctik9c6ubp8nfm" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://th.thgim.com/thread/article22593149.ece/alternates/LANDSCAPE_660/theatre" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://img.huffingtonpost.com/asset/5bb808cd2600003500837752.jpeg?ops=scalefit_720_noupscale" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="http://www.forcespecialeffects.co.uk/application/files/9314/3878/4961/Southwark-As-you-like-it_02.jpg" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://banjaluka.net/wp-content/uploads/2015/09/do%C4%91ite-u-pozoriste.png" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://cdn.thestage.co.uk/wp-content/uploads/2015/03/free-tickets-700x455.jpg" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://i.guim.co.uk/img/media/f74b03ad67934b67278f7bbbaac5dffce0a00a41/0_153_7360_4309/master/7360.jpg?width=700&quality=85&auto=format&fit=max&s=96b6819b41d1439efe7041984722ef41" alt="image3" onmouseover="preview(this)" />
+        <img id="3" class="thumb normal" src="https://www.scrumpywillowandthesingingkettle.co.uk/wp-content/uploads/2018/03/ottawa-little-theatre-building-inside.jpg" alt="image3" onmouseover="preview(this)" />
+    </div>
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut(2000);
+        });
+    </script>
+
+    <script>
+
+        var lastImg = 1; //Set initial thumbnail and preview
+        document.getElementById(0).src = document.getElementById(lastImg).src;
+        document.getElementById(lastImg).className = "thumb selected";
+
+        function preview(img) {
+            document.getElementById(lastImg).className = "thumb normal";
+            img.className = "thumb selected";
+            document.getElementById(0).src = img.src;
+            lastImg = img.id
+        }
+    </script>
+
+</body>
+</html>
+

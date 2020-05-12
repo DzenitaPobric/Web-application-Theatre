@@ -1,0 +1,67 @@
+﻿
+@model NagradnaIgraUrediVM
+
+@{
+    ViewData["Title"] = "Uredi";
+
+}
+
+<h2 class="naslov">Uredi nagradnu igru</h2>
+<br />
+<div class="okvir">
+
+    <form asp-action="UrediSnimi" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="id" />
+
+
+        <div class="form-group">
+            <label class="label">Naziv</label>
+            <input class="form-control" type="text" asp-for="Naziv" id="input" />
+            @*<span asp-validation-for="Ime" class="text-danger"></span>*@
+
+        </div>
+
+        <div class="form-group">
+            <label class="label">Opis</label>
+            <input class="form-control" type="text" asp-for="Opis" id="input" />
+            @*<span asp-validation-for="Prezime" class="text-danger"></span>*@
+
+        </div>
+
+        <div class="form-group">
+            <label class="label">Početak</label>
+            <input class="form-control" type="text" asp-for="Pocetak" id="input" />
+            @*<span asp-validation-for="DatumRodjenja" class="text-danger"></span>*@
+
+        </div>
+
+        <div class="form-group">
+            <label class="label">Kraj</label>
+            <input class="form-control" type="text" asp-for="Kraj" id="input" />
+            @*<span asp-validation-for="DatumRodjenja" class="text-danger"></span>*@
+
+        </div>
+
+
+
+        <input type="submit" value="Sačuvaj" class="btn btn-danger" id="snimi" />
+    </form>
+    
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/DodajForm.css">
+
+    </head>
+    <br />
+    <br />
+    <a href="/NagradnaIgra/Prikazi" class="btn btn-warning"><i class="fas fa-arrow-circle-left"></i>  Nazad</a>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.custom-file-input').on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).next('.custom-file-label').html(fileName);
+        });
+    });
+</script>

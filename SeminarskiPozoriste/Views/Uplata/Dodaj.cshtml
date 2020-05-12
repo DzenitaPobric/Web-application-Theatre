@@ -1,0 +1,49 @@
+﻿@model UplataDodajVM
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/DodajForm.css">
+</head>
+
+<body style="background-color:whitesmoke">
+
+    <h2 class="naslov">Dodaj uplatu</h2>
+    <br />
+
+    <div class="okvir">
+
+        <form asp-action="Snimi" method="post">
+            <input type="hidden" asp-for="Uplata.UplataID" />
+
+            <div class="form-group">
+                <label class="label">Naziv </label>
+                <input asp-for="Uplata.Naziv" id="input" class="form-control" required=""  oninvalid="this.setCustomValidity('Naziv je obavezno polje')"
+                       oninput="setCustomValidity('')"  />
+            </div>
+
+            <div class="form-group">
+                <label class="label">Sponzor </label>
+                <select asp-for="Uplata.SponzorID" asp-items="Model.Sponzor" id="input" class="form-control"></select>
+
+            </div>
+
+            <div class="form-group">
+                <label class="label">Iznos </label>
+                <input asp-for="Uplata.Iznos" id="input" class="form-control" required=""  oninvalid="this.setCustomValidity('Iznos je obavezno polje')"
+                       oninput="setCustomValidity('')"   />
+            </div>
+
+            <div class="form-group">
+                <label class="label">Svrha </label>
+                <input asp-for="Uplata.Svrha" id="input" class="form-control" required=""  oninvalid="this.setCustomValidity('Svrha je obavezno polje')"
+                       oninput="setCustomValidity('')"  />
+            </div>
+
+
+            <br />
+            <input type="submit" value="Snimi" class="btn btn-danger" id="snimi" />
+        </form>
+    </div>
+</body>

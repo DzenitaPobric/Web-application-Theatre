@@ -1,0 +1,33 @@
+﻿@model GradDodajVM
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/DodajForm.css">
+</head>
+
+<body style="background-color:whitesmoke">
+    <h3 class="naslov">Dodaj grad</h3>
+    <br />
+    <br />
+
+
+    <div class="okvir">
+        <form asp-action="Snimi" method="post">
+            <input type="hidden" asp-for="Grad.GradID" />
+
+            <div class="form-group">
+                <label class="label">Naziv grada</label>
+                <input asp-for="Grad.Naziv" id="input" class="form-control" required="" oninvalid="this.setCustomValidity('Naziv je obavezno polje')"
+                       oninput="setCustomValidity('')" />
+                <span asp-validation-for="Grad.Naziv" class="text-danger" style="margin-left:10%"></span>
+            </div>
+
+            <input type="submit" value="Snimi" class="btn btn-danger" id="snimi" />
+        </form>
+
+
+    </div>
+
+    </body>

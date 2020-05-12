@@ -1,0 +1,33 @@
+﻿@model  SjedisteDodajVM
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+<br /><br />
+
+<form asp-action="Snimi" method="post">
+ 
+    <div class="form-group">
+        <label>Red </label>
+        <input asp-for="Sjediste.Red" placeholder="0" class="form-control"  style="width:25%"/>
+        <span asp-validation-for="Sjediste.Red" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Kolona </label>
+        <input asp-for="Sjediste.Kolona" placeholder="0" class="form-control"  style="width:25%"/>
+        <span asp-validation-for="Sjediste.Kolona" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Sala </label>
+        <select asp-for="Sjediste.SalaID" asp-items="Model.listaSala" class="form-control" style="width:25%"></select>
+        <span asp-validation-for="Sjediste.SalaID" class="text-danger"></span>
+
+    </div>
+
+    <br />
+    <input type="submit" value="Snimi" class="btn btn-danger" />
+</form>
+

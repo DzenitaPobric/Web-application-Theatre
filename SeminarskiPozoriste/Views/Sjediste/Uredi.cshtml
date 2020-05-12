@@ -1,0 +1,43 @@
+﻿@model SjedisteUrediVM
+
+@{
+    ViewData["Title"] = "UrediForm";
+}
+
+@*<head>
+        <link href="~/css/DodajFormStil.css" rel="stylesheet" />
+    </head>*@
+
+<h2>
+    Uređivanje sjedišta
+</h2>
+<br /><br />
+      <form asp-action="UrediSnimi" method="post">
+          <input type="hidden" asp-for="Id" />
+
+          <div class="form-group">
+              <label>Red</label>
+              <input class="form-control"  asp-for="Red" style="width:250px" />
+          </div>
+
+          <div class="form-group">
+              <label>Kolona</label>
+              <input class="form-control" asp-for="Kolona" style="width:250px" />
+          </div>
+
+          <div class="form-group">
+              <label>Sala</label>
+              <select class="form-control" asp-for="salaId" asp-items="Model.Sala" style="width:250px" ></select>
+          </div>
+
+
+          <input type="submit" value="Sačuvaj" class="btn btn-danger" />
+      </form>
+
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<br /><br />
+<a href="/Sjediste/Prikazi" class="btn btn-warning"><i class="fas fa-arrow-circle-left"></i>  Nazad</a>
+

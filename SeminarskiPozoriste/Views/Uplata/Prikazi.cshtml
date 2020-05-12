@@ -1,0 +1,63 @@
+﻿
+@model UplataPrikaziVM
+@{
+    ViewData["title"] = "Prikazi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2 style="text-align: center; font-style:italic;">Uplate</h2>
+<br />
+<br />
+<br />
+
+<table id="table_id" class="row-border" style="width:100%">
+    <thead>
+        <tr>
+            <th>Naziv uplate </th>
+            <th>Sponzor </th>
+            <th>Iznos </th>
+            <th>Svrha </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.lista)
+        {
+            <tr>
+                <td>@x.Naziv</td>
+                <td>@x.NazivSponzora</td>
+                <td>@x.Iznos</td>
+                <td>@x.Svrha</td>
+                <td>
+                    <span id="confirmDeleteSpan_@x.UplataID" style="display:none">
+                        <span>Da li ste sigurni da želite obrisati? </span>
+                        <a asp-action="Obrisi" asp-route-id="@x.UplataID" class="btn btn-danger">DA</a>
+                        <a href="#" class="btn btn-primary"
+                           onclick="confirmDelete('@x.UplataID', false)">NE</a>
+                    </span>
+
+                    <span id="deleteSpan_@x.UplataID">
+                        <a href="#" class="btn btn-danger"
+                           onclick="confirmDelete('@x.UplataID', true)"><i class="far fa-trash-alt"></i> Obriši</a>
+                    </span>
+                    <a class="btn btn-primary" asp-action="Uredi" asp-route-id="@x.UplataID"><i class="fas fa-edit"></i>  Uredi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="~/js/delete.js"></script>
+
+    <link rel="stylesheet" href="~/css/dataTable.css">
+    <script src="~/js/dataTable.js"></script>
+    <script src="~/js/DataTableBosanskiJezik.js"></script>
+</head>
+
+<br />
+<br />
+<br />
+<a class="btn btn-info" href="/Home/Index"><i class="fas fa-home"></i>  Početna</a>
+<a class="btn btn-success" asp-action="Dodaj"><i class="fas fa-plus-circle"></i>  Dodaj novu</a>

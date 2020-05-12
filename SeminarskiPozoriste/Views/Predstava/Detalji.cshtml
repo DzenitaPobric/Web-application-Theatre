@@ -1,0 +1,24 @@
+﻿@model Predstava
+@{
+    ViewData["Title"] = "Detalji";
+}
+<br />
+
+
+
+<input asp-for="PredstavaID" type="hidden" />
+
+    <h2 style="margin-left:10%"> @Model.Naziv </h2>
+
+
+    <div id="ajaxDiv">
+
+    </div>
+
+
+    <script>
+    $.get("/AjaxGlumci/Index/@Model.PredstavaID",function(data){
+        $("#ajaxDiv").html(data);
+    })
+    </script>
+
