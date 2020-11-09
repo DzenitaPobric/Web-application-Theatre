@@ -7,17 +7,15 @@ Pristupni podaci
 
 Modul administrator
 
+       Korisničko ime : administrator
 
-Korisničko ime : administrator
-
-Lozinka: test
+       Lozinka: test
 
  
 Modul korisnik
 
+         Korisničko ime: test
 
-Korisničko ime: test
-
-Lozinka: test
+         Lozinka: test
 
 
